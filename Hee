@@ -1,0 +1,36 @@
+local Rayfield = loadstring(game:HttpGet("https://sirius.menu/rayfield"))()
+
+local Window = Rayfield:CreateWindow({
+    Name = "My Game UI",
+    LoadingTitle = "Loading...",
+    LoadingSubtitle = "Example",
+    ConfigurationSaving = {
+        Enabled = false
+    }
+})
+
+local Tab = Window:CreateTab("Main")
+
+Tab:CreateButton({
+    Name = "Test Button",
+    Callback = function()
+        print("Button Clicked!")
+    end
+})
+
+Tab:CreateToggle({
+    Name = "Example Toggle",
+    CurrentValue = false,
+    Callback = function(Value)
+        print("Toggle:", Value)
+    end
+})
+
+Tab:CreateDropdown({
+    Name = "Choose Ore",
+    Options = {"Stone", "Iron", "Gold", "Diamond"},
+    CurrentOption = "Stone",
+    Callback = function(Option)
+        print("Selected:", Option)
+    end
+})
